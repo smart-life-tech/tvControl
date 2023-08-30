@@ -39,6 +39,7 @@ void loop()
         // Print a short summary of received data
         IrReceiver.printIRResultShort(&Serial);
         IrReceiver.printIRResultRawFormatted(&Serial, true);
+        Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);
         if (IrReceiver.decodedIRData.protocol == UNKNOWN)
         {
             // We have an unknown protocol here, print more info
