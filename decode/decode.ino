@@ -12,7 +12,7 @@ void setup()
 {
     Serial.begin(9600);
     // Just to know which program is running on my Arduino
-    Serial.println(F("START " __FILE__ " from " __DATE__ "\r\nUsing library version " VERSION_IRREMOTE));
+    Serial.println(F("START " __FILE__ " from " __DATE__ __TIME__ "\r\nUsing library version " VERSION_IRREMOTE));
 
     /*
      * Start the receiver, enable feedback LED and take LED feedback pin from the internal boards definition
