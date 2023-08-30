@@ -6,7 +6,7 @@
 
 #include <IRremote.h>
 
-int IR_RECEIVE_PIN = 11;
+int IR_RECEIVE_PIN = 2;
 
 void setup()
 {
