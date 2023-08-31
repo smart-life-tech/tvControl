@@ -2,7 +2,7 @@
  * Specify which protocol(s) should be used for decoding.
  * If no protocol is defined, all protocols are active.
  */
-#define DECODE_NEC 1
+//#define DECODE_NEC 1
 
 #include <IRremote.h>
 
@@ -33,12 +33,19 @@ void loop()
      * address is in command is in IrReceiver.decodedIRData.address
      * and up to 32 bit raw data in IrReceiver.decodedIRData.decodedRawData
      */
+    delay(1000);
+    Serial.println("Print a short summary of received data raw formatted ");
+    Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);
+    IrReceiver.resume(); // Enable receiving of the next value
     if (IrReceiver.decode())
     {
 
         // Print a short summary of received data
+        Serial.println("Print a short summary of received data formatted to serial");
         IrReceiver.printIRResultShort(&Serial);
+        Serial.println("Print a short summary of received data raw");
         IrReceiver.printIRResultRawFormatted(&Serial, true);
+        Serial.println("Print a short summary of received data raw formatted ");
         Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);
         if (IrReceiver.decodedIRData.protocol == UNKNOWN)
         {
