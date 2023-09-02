@@ -120,41 +120,5 @@ void loop()
         IrReceiver.printIRResultShort(&Serial);
         irrecv.resume(); // Receive the next value
     }
-    /*
-    if (IrReceiver.decode())
-    {
 
-        // Print a short summary of received data
-        Serial.println("Print a short summary of received data formatted to serial");
-        IrReceiver.printIRResultShort(&Serial);
-        Serial.println("Print a short summary of received data raw");
-        IrReceiver.printIRResultRawFormatted(&Serial, true);
-        Serial.println("Print a short summary of received data raw formatted ");
-        Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);
-        if (IrReceiver.decodedIRData.protocol == UNKNOWN)
-        {
-            // We have an unknown protocol here, print more info
-            IrReceiver.printIRResultRawFormatted(&Serial, true);
-        }
-        Serial.println();
-
-        /*
-         * !!!Important!!! Enable receiving of the next value,
-         * since receiving has stopped after the end of the current received data packet.
-         */
-        IrReceiver.resume(); // Enable receiving of the next value
-
-        /*
-         * Finally, check the received data and perform actions according to the received command
-         */
-        if (IrReceiver.decodedIRData.command == 0x10)
-        {
-            // do something
-        }
-        else if (IrReceiver.decodedIRData.command == 0x11)
-        {
-            // do something else
-        }
-    }
-*/
 }
