@@ -33,10 +33,10 @@ void loop()
      * address is in command is in IrReceiver.decodedIRData.address
      * and up to 32 bit raw data in IrReceiver.decodedIRData.decodedRawData
      */
-    delay(1000);
-    Serial.println("Print a short summary of received data raw formatted ");
-    Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);
-    IrReceiver.resume(); // Enable receiving of the next value
+    //delay(1000);
+   // Serial.println("Print a short summary of received data raw formatted ");
+   // Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);
+    //IrReceiver.resume(); // Enable receiving of the next value
     if (IrReceiver.decode())
     {
 
