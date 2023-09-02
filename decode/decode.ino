@@ -50,9 +50,9 @@ void dump(decode_results *results)
     {
         Serial.print("Decoded JVC: ");
     }
-    else if (results->decode_type == 5)
+    else if (results->decode_type == SAMSUNG)
     {
-        Serial.print("Decoded AIWA RC T501: ");
+        Serial.print("Decoded samsung RC T501: ");
     }
     else if (results->decode_type == WHYNTER)
     {
@@ -116,8 +116,11 @@ void loop()
     {
         Serial.println(results.value, HEX);
         dump(&results);
+        Serial.println("Print a short summary of received data formatted to serial");
+        IrReceiver.printIRResultShort(&Serial);
         irrecv.resume(); // Receive the next value
     }
+    /*
     if (IrReceiver.decode())
     {
 
@@ -153,4 +156,5 @@ void loop()
             // do something else
         }
     }
+*/
 }
