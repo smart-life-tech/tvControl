@@ -1,5 +1,5 @@
 {
     "configuration": "cpu=atmega328",
     "board": "arduino:avr:nano",
-    "sketch": "decode\\decode.ino"
+    "sketch": "decode2\\decode2.ino"
 }
